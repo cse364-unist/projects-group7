@@ -20,17 +20,35 @@ git clone https://github.com/KiranPranay/swapseed
 cd swapseed
 ```
 
-2. Install the required dependencies:
+2. Install miniconda:
 
-```pip
-pip install -r requirements.txt
+```shell
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+source ~/.bashrc
+~/miniconda3/bin/conda init bash
 ```
 
-3. Execution
+3. Activate conda
 
+```shell
+ conda create -n faceswap python=3.8
+ conda activate faceswap
+```
+
+4. Install dependencies
+
+```shell
+pip install requirements.txt
+```
+
+5. Execution
 ```python
- python main.py
+python main.py
 ```
+
 
 ## Usage
 
