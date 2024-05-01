@@ -1,0 +1,42 @@
+please start the image with commend docker run -p 8080:8080 -it --name usa test /bin/bash
+
+Description of feature
+We implement the feature that recommed the movies corresponding with seasons and genres. 
+And we recommend the movies with top 10 ranking movies and randomly recommend movie.
+
+Change: we change the implementation algorithm for seasoning recommendation feature
+- Originally, we were going to recommend movies for each season by dividing the seasons 
+ based on the time people reviewed them. However, we realized that it was impossible to 
+ divide the seasons based on the time reviewd because there was a lack of data on the Internet 
+ including review time, and when we checked the time they reviewed from the MovieLens' data, the
+ time they reviewed for same movie appeared differently. Therefore, since movies are usually 
+ released during the season when they are expected to be successful, we decided to recommend 
+ movies for each season by dividing the seasons based on the release time of the movie.
+
+List of Rest API get all movies list feature
+-1 get all movie list
+
+-2 get random recommendation list of season with genre 
+
+-3 get random recommendation list of season  
+
+-4 get top10 recommendation list of season with genre
+
+-5 get top 10 recommendation list of season
+
+curl command
+
+get all movie list
+-1 curl -X GET http://localhost:8080/movies
+
+get random recommendation list of season with genre -> below is the example
+-2 curl -X GET "http://localhost:8080/movies/recommend?season=summer&genre=Comedy"
+
+get random recommendation list of season -> below is the example
+-3 curl -X GET "http://localhost:8080/movies/recommend?season=summer"
+
+get top10 recommendation list of season with genre -> below is the example
+-4 curl -X GET "http://localhost:8080/movies/recommend/top10?season=summer&genre=Comedy"
+
+get top 10 recommendation list of season -> below is the example
+-5 curl -X GET "http://localhost:8080/movies/recommend/top10?season=summer"
