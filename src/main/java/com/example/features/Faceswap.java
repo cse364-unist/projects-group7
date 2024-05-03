@@ -20,8 +20,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.util.LinkedMultiValueMap;
 import java.util.Map;
 
-import org.apache.commons.codec.binary.Base64;
-
+import java.util.Base64;
 
 
 @RestController
@@ -41,7 +40,6 @@ public class Faceswap {
 
         HttpHeaders headers = new HttpHeaders();
 
-
         if (file1.isEmpty() || file2.isEmpty()) {
             headers.setContentType(MediaType.APPLICATION_JSON);
             return ResponseEntity.badRequest().headers(headers).body(Map.of("error", "Please select two files to upload."));
@@ -56,32 +54,22 @@ public class Faceswap {
 
             resultFile = runPythonScript(tempFile1, tempFile2);
 
-            /*
-            if (!Files.exists(resultFile)) {
-                System.out.println("File does not exist");
-                headers.setContentType(MediaType.APPLICATION_JSON);
-                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).headers(headers).body(null);
-            }
-            */
-
             byte[] imageBytes = Files.readAllBytes(resultFile);
-            headers.setContentType(MediaType.IMAGE_JPEG);
-            headers.setContentDispositionFormData("attachment", resultFile.getFileName().toString());
-
-            return ResponseEntity.ok().headers(headers).body(imageBytes);
-
-
+            String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            return ResponseEntity.ok().headers(headers).body(Map.of("image", base64Image, "message", "Faces swapped successfully."));
         } catch (Exception e) {
             headers.setContentType(MediaType.APPLICATION_JSON);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).headers(headers).body(null);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).headers(headers).body(Map.of("error", "An error occurred during file processing."));
         } finally {
             cleanUpFiles(tempFile1, tempFile2, tempDir);
         }
     }
 
+
     public Path runPythonScript(Path sourcePath, Path targetPath) throws IOException, InterruptedException {
         // Directory of Python file
-        String scriptPath = "/projects/milestone1/faceswap/main.py";
+        String scriptPath = "/project/milestone2/faceswap/main.py";
 
         // Build the command to run the script with arguments
         ProcessBuilder builder = new ProcessBuilder(
@@ -91,7 +79,7 @@ public class Faceswap {
         );
 
         // Set the working directory for the script
-        builder.directory(new File("/projects/milestone1/faceswap"));
+        builder.directory(new File("/project/milestone2/faceswap"));
 
         // Redirect error stream to standard output for logging
         builder.redirectErrorStream(true);
@@ -116,11 +104,10 @@ public class Faceswap {
         }
         */
 
-        // Assuming the result file is 'result.jpg' in 'faceswap/outputs'
         String currentDir = System.getProperty("user.dir");
         System.out.println("Current working directory: " + currentDir);
 
-        resultFile = Paths.get("/projects/milestone1/faceswap/outputs/result.jpeg");
+        resultFile = Paths.get("/project/milestone2/faceswap/outputs/result.jpeg");
 
         // Check if the file exists
         /*

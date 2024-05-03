@@ -14,8 +14,6 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Since we're using Ubuntu base, 'sudo' may not be needed in Dockerfile commands
-# Adding repositories if needed (Uncomment the following lines if you need them)
 RUN add-apt-repository universe
 RUN apt-get update && apt-get install -y python3-pip
 
