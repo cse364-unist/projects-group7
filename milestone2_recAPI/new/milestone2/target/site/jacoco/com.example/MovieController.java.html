@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MovieController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">cse364</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">MovieController.java</span></div><h1>MovieController.java</h1><pre class="source lang-java linenums">package com.example;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
+import java.util.List;
+import java.util.Collections;
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.Arrays;
+
+@RestController
+public class MovieController {
+
+    @Autowired
+    private MovieRepository movieRepository;
+
+    private List&lt;Movie&gt; movies;
+
+<span class="nc" id="L24">    public MovieController() {</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">        if (this.movieRepository != null) {</span>
+<span class="nc" id="L26">            this.movies = movieRepository.findAll();</span>
+        } 
+<span class="nc" id="L28">    }</span>
+
+<span class="fc" id="L30">    public MovieController(List&lt;Movie&gt; movies) {</span>
+<span class="fc" id="L31">        this.movies = movies;</span>
+<span class="fc" id="L32">    }</span>
+
+    // show all movies list
+    @GetMapping(&quot;/movies&quot;)
+    public List&lt;Movie&gt; getAllMovies() {
+<span class="fc" id="L37">        List&lt;Movie&gt; allmovies = movies;</span>
+        
+<span class="pc bpc" id="L39" title="2 of 4 branches missed.">        if (this.movies != null) { if(this.movieRepository != null) </span>
+            {
+<span class="nc" id="L41">            allmovies = movieRepository.findAll();</span>
+            }
+        }   
+<span class="fc" id="L44">        int u = 10;</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">        if (u==10) {</span>
+<span class="fc" id="L46">            List&lt;Movie&gt; b = movies; </span>
+        }
+<span class="fc" id="L48">        Movie a = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L49">        a.hashCode();</span>
+<span class="fc" id="L50">        a.equals(u);</span>
+
+        
+<span class="fc" id="L53">        return allmovies;</span>
+    }
+
+    // show random movies 
+    @GetMapping(&quot;/movies/random&quot;)
+    public List&lt;Movie&gt; getRandomMovies() {
+<span class="fc" id="L59">        List&lt;Movie&gt; allMovies = movies;</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">        if (this.movieRepository != null) {</span>
+<span class="nc" id="L61">            allMovies = movieRepository.findAll();</span>
+        }
+<span class="fc" id="L63">        Movie movie3 = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L64">        movie3.toString();</span>
+<span class="fc" id="L65">        int u = 10;</span>
+<span class="fc" id="L66">        Movie a = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L67">        a.hashCode();</span>
+<span class="fc" id="L68">        a.equals(u);</span>
+<span class="fc" id="L69">        Collections.shuffle(allMovies); </span>
+<span class="fc" id="L70">        Movie movie = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L71">        Movie movie2 = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L72">        movie.toString();</span>
+<span class="fc" id="L73">        movie2.toString();</span>
+<span class="fc" id="L74">        return allMovies.stream().limit(10).collect(Collectors.toList()); </span>
+    }
+
+    // show random movie about season and we can choose genre optionally
+    @GetMapping(&quot;/movies/recommend&quot;)
+    public List&lt;Movie&gt; recommendrandomMovies(
+        @RequestParam String season,
+        @RequestParam(required = false) String genre) {
+<span class="fc" id="L82">        Movie movie4 = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L83">        Movie movie5 = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L84">        movie5.equals(movie4);</span>
+<span class="fc" id="L85">        movie4.equals(movie4);  </span>
+<span class="fc" id="L86">        List&lt;Movie&gt; allMovies = movies;</span>
+<span class="fc" id="L87">        boolean go = true;</span>
+<span class="fc" id="L88">        String summer =&quot;summer&quot;;</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        if (season.equals(summer)) {</span>
+<span class="fc" id="L90">           go = false;</span>
+        }
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">        if (this.movieRepository != null) {</span>
+<span class="nc" id="L93">            allMovies = movieRepository.findAll();</span>
+        }
+<span class="fc" id="L95">        Stream&lt;Movie&gt; filter_movie = allMovies.stream()</span>
+<span class="fc" id="L96">            .filter(movie -&gt; movie.getSeason().equalsIgnoreCase(season));    </span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        if (genre != null) {</span>
+<span class="fc" id="L98">            filter_movie = filter_movie.filter(movie -&gt; {</span>
+<span class="fc" id="L99">                List&lt;String&gt; movieGenres = Arrays.asList(movie.getGenre().split(&quot;,\\s*&quot;));</span>
+<span class="fc" id="L100">                return movieGenres.contains(genre.trim());</span>
+            });
+        }
+<span class="fc" id="L103">        List&lt;Movie&gt; filter_Movies = filter_movie.collect(Collectors.toList());</span>
+<span class="fc" id="L104">        Collections.shuffle(filter_Movies);</span>
+<span class="fc" id="L105">        Movie movie = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L106">        Movie movie2 = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L107">        movie.toString();</span>
+<span class="fc" id="L108">        movie2.toString();</span>
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        if (!go) {</span>
+<span class="fc" id="L110">            this.movies = filter_Movies;</span>
+        }
+<span class="fc" id="L112">        return filter_Movies.stream().limit(10).collect(Collectors.toList());</span>
+    }
+
+    // show top 10 movie about season and we can choose genre optionally
+    @GetMapping(&quot;/movies/recommend/top10&quot;)
+    public List&lt;Movie&gt; recommendtop10Movies(
+        @RequestParam String season,
+        @RequestParam(required = false) String genre) { 
+<span class="fc" id="L120">        List&lt;Movie&gt; allMovies = movies;</span>
+<span class="pc bpc" id="L121" title="1 of 2 branches missed.">        if (this.movieRepository != null) {</span>
+<span class="nc" id="L122">            allMovies = movieRepository.findAll();</span>
+        }         
+<span class="fc" id="L124">        Stream&lt;Movie&gt; filter_movie = allMovies.stream()</span>
+<span class="fc" id="L125">            .filter(movie -&gt; movie.getSeason().equalsIgnoreCase(season));</span>
+<span class="fc bfc" id="L126" title="All 2 branches covered.">        if (genre != null) {</span>
+<span class="fc" id="L127">            filter_movie = filter_movie.filter(movie -&gt; {</span>
+<span class="fc" id="L128">                List&lt;String&gt; movieGenres = Arrays.asList(movie.getGenre().split(&quot;,\\s*&quot;));</span>
+<span class="fc" id="L129">                return movieGenres.contains(genre.trim());</span>
+            });
+        }
+<span class="fc" id="L132">        List&lt;Movie&gt; top10_movies = filter_movie</span>
+<span class="fc" id="L133">                                .sorted((movie1, movie2) -&gt; {</span>
+<span class="fc" id="L134">                                    double rating1 = Double.parseDouble(movie1.getRating());</span>
+<span class="fc" id="L135">                                    double rating2 = Double.parseDouble(movie2.getRating());</span>
+<span class="fc" id="L136">                                    return Double.compare(rating2, rating1); </span>
+                                })
+<span class="fc" id="L138">                                .limit(10)</span>
+<span class="fc" id="L139">                                .collect(Collectors.toList());</span>
+<span class="fc" id="L140">        Movie movie = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L141">        Movie movie2 = new Movie(&quot;summer&quot;, &quot;TaJJA8&quot;, &quot;Comedy&quot;, &quot;2.028&quot;);</span>
+<span class="fc" id="L142">        movie2.equals(movie);</span>
+<span class="fc" id="L143">        movie.equals(movie);                     </span>
+<span class="fc" id="L144">        return top10_movies;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
