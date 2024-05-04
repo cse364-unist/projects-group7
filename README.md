@@ -14,29 +14,29 @@ There were no significant changes from the initial proposal.
 
 ### Merge Faces API
 
-- **Description:** This API merges the faces of two individuals in an image.
+- **Description:** This API merges the faces of user face with the movie character in movie poster(Both images should be provided by user).
 - **HTTP Method:** POST
 - **Endpoint:** `/features/upload`
 - **Request Parameters:**
-  - `file1`: The image file of the first individual.
-  - `file2`: The image file of the second individual.
+  - `file1`: The image file(movie poster)
+  - `file2`: The image file of user face.
 - **Response:** 
-  - `image`: Base64 encoded string of the resulting image.
   - `message`: A confirmation message indicating the successful face swap.
+  - `image`: Base64 encoded string of the resulting image.
 
 #### Example Curl Commands
 
 ##### POST API Request
 
-curl -X POST -F "file1=@images/elon_musk.jpg" -F "file2=@images/mark.jpg" http://localhost:8888/features/upload
+curl -X POST -F "file1=@images/elon_musk.jpg" -F "file2=@images/mark.jpg" http://localhost:8080/features/upload
 
-Note: Replace http://localhost:8888 with the appropriate server address
+Note: Replace http://localhost:8080 with the appropriate server address
 
 ##### Expected Output:
 
 {
-  "image": "Base64_encoded_image",
-  "message": "Faces swapped successfully."
+  "message": "Faces swapped successfully.",
+  "image": "Base64_encoded_image"
 }
 
 This command uploads two image files (elon_musk.jpg and mark.jpg) and swaps the faces of the individuals. The response contains the merged image in base64 format along with a success message.
