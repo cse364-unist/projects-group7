@@ -70,7 +70,7 @@ public class Faceswap {
 
     public Path runPythonScript(Path sourcePath, Path targetPath) throws IOException, InterruptedException {
         // Directory of Python file
-        String scriptPath = "/root/project/milestone2/api/faceswap/main.py";
+        String scriptPath = "/root/project/projects-group7/uni_movie/api/faceswap/main.py";
 
         // Build the command to run the script with arguments
         ProcessBuilder builder = new ProcessBuilder(
@@ -80,7 +80,7 @@ public class Faceswap {
         );
 
         // Set the working directory for the script
-        builder.directory(new File("/root/project/milestone2/api/faceswap"));
+        builder.directory(new File("/root/project/projects-group7/uni_movie/api/faceswap"));
 
         builder.redirectErrorStream(true);
 
@@ -105,7 +105,7 @@ public class Faceswap {
         */
 
 
-        resultFile = Paths.get("/root/project/milestone2/api/faceswap/outputs/result.jpeg");
+        resultFile = Paths.get("/root/project/projects-group7/uni_movie/api/faceswap/outputs/result.jpeg");
 
 
 
