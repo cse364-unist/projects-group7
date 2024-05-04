@@ -1,4 +1,4 @@
-# Project Name
+# CSE364-unist group 7
 
 This repository contains the code for a feature that allows users to merge the faces of two individuals.
 
