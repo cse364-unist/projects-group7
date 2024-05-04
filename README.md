@@ -40,7 +40,7 @@ Note: Replace http://localhost:8888 with the appropriate server address
 }
 
 This command uploads two image files (elon_musk.jpg and mark.jpg) and swaps the faces of the individuals. The response contains the merged image in base64 format along with a success message.
-### Movie Recommendation System
+### Movie Recommendation API
 
 This repository contains the code for a movie recommendation system that recommends movies based on seasons, genres, and rankings.
 
