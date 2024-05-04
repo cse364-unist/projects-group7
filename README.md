@@ -40,6 +40,19 @@ Note: Replace http://localhost:8080 with the appropriate server address
 }
 
 This command uploads two image files (elon_musk.jpg and mark.jpg) and swaps the faces of the individuals. The response contains the merged image in base64 format along with a success message.
+
+##### POST API Wrong Request
+
+curl -X POST -F "file1=@images/elon_musk.jpg" -F "file2=@images/emptyfile.jpg" http://localhost:8080/features/upload
+
+Note: When one of image files is empty
+
+##### Expected Output:
+
+{
+  "error":"Please select two files to upload."
+}
+
 ### Movie Recommendation System
 
 This repository contains the code for a movie recommendation system that recommends movies based on seasons, genres, and rankings.
