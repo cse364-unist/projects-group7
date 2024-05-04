@@ -126,3 +126,4 @@ This API provides movie prediction functionality based on input movie factors.
 curl -X POST -F "factor=James Cameron,178,0,855,Joel David Moore,1000,760505847,Action|Adventure|Fantasy|Sci-Fi,CCH Pounder,886204,Wes Studi,0,avatar|future|marine|native|paraplegic,3054,English,USA,PG-13,237000000,2009,936,1.78,33000" "http://localhost:8080/features/movie_predict"
 
 ###### Expected Output:
+['HIT']
