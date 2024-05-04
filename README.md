@@ -41,6 +41,11 @@ Note: Replace http://localhost:8080 with the appropriate server address
 
 This command uploads two image files (elon_musk.jpg and mark.jpg) and swaps the faces of the individuals. The response contains the merged image in base64 format along with a success message.
 And the merged image will be proveid through web browser, in this assignment, we just provide the base64 information.
+
+<p align="center">
+<img src="unimovie/api/faceswap/images/result.jpeg" width="700px" alt="Face Swap Result">
+</p>
+
 ### Movie Recommendation API
 
 This repository contains the code for a movie recommendation system that recommends movies based on seasons, genres, and rankings.
