@@ -28,9 +28,9 @@ There were no significant changes from the initial proposal.
 
 ##### POST API Request
 
-curl -X POST -F "file1=@images/elon_musk.jpg" -F "file2=@images/mark.jpg" "http://localhost:8888/features/upload"
+curl -X POST -F "file1=@images/elon_musk.jpg" -F "file2=@images/mark.jpg" "http://localhost:8080/features/upload"
 
-Note: Replace http://localhost:8888 with the appropriate server address
+Note: Replace http://localhost:8080 with the appropriate server address
 
 ##### Expected Output:
 
