@@ -59,13 +59,9 @@ public class FaceswapTest {
 
     @BeforeEach
     public void setUp() throws IOException {
-<<<<<<<< HEAD:unimovie/src/test/java/FaceswapTest.java
         path1 = Paths.get("/root/project/projects-group7/unimovie/api/faceswap/images/elon_musk.jpg");
         path2 = Paths.get("/root/project/projects-group7/unimovie/api/faceswap/images/mark.jpg");
-========
-        path1 = Paths.get("/root/project/projects-group7/uni_movie/api/faceswap/images/elon_musk.jpg");
-        path2 = Paths.get("/root/project/projects-group7/uni_movie/api/faceswap/images/mark.jpg");
->>>>>>>> 84177ac229257bb381a799ec50b52ef0275ed531:uni_movie/src/test/java/FaceswapTest.java
+
 
         byte[] content1 = Files.readAllBytes(path1);
         byte[] content2 = Files.readAllBytes(path2);
