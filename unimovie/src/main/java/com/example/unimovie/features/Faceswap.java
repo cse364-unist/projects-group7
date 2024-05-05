@@ -70,11 +70,8 @@ public class Faceswap {
 
     public Path runPythonScript(Path sourcePath, Path targetPath) throws IOException, InterruptedException {
         // Directory of Python file
-<<<<<<<< HEAD:unimovie/src/main/java/com/example/unimovie/features/Faceswap.java
         String scriptPath = "/root/project/projects-group7/unimovie/api/faceswap/main.py";
-========
-        String scriptPath = "/root/project/projects-group7/uni_movie/api/faceswap/main.py";
->>>>>>>> 84177ac229257bb381a799ec50b52ef0275ed531:uni_movie/src/main/java/com/example/unimovie/features/Faceswap.java
+
 
         // Build the command to run the script with arguments
         ProcessBuilder builder = new ProcessBuilder(
@@ -84,11 +81,8 @@ public class Faceswap {
         );
 
         // Set the working directory for the script
-<<<<<<<< HEAD:unimovie/src/main/java/com/example/unimovie/features/Faceswap.java
         builder.directory(new File("/root/project/projects-group7/unimovie/api/faceswap"));
-========
-        builder.directory(new File("/root/project/projects-group7/uni_movie/api/faceswap"));
->>>>>>>> 84177ac229257bb381a799ec50b52ef0275ed531:uni_movie/src/main/java/com/example/unimovie/features/Faceswap.java
+
 
         builder.redirectErrorStream(true);
 
@@ -113,11 +107,8 @@ public class Faceswap {
         */
 
 
-<<<<<<<< HEAD:unimovie/src/main/java/com/example/unimovie/features/Faceswap.java
         resultFile = Paths.get("/root/project/projects-group7/unimovie/api/faceswap/outputs/result.jpeg");
-========
-        resultFile = Paths.get("/root/project/projects-group7/uni_movie/api/faceswap/outputs/result.jpeg");
->>>>>>>> 84177ac229257bb381a799ec50b52ef0275ed531:uni_movie/src/main/java/com/example/unimovie/features/Faceswap.java
+
 
 
 
