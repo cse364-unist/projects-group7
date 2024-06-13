@@ -14,12 +14,12 @@ There were no significant changes from the initial proposal.
 
 ### Merge Faces API
 
-- **Description:** This API merges the faces of two individuals in an image.
+- **Description:** This API merges the face in movie poster with the user face
 - **HTTP Method:** POST
 - **Endpoint:** `/features/upload`
 - **Request Parameters:**
-  - `file1`: The image file of the first individual.
-  - `file2`: The image file of the second individual.
+  - `file1`: The image file(movie poster)
+  - `file2`: The image file(user face image)
 - **Response:** 
   - `image`: Base64 encoded string of the resulting image.
   - `message`: A confirmation message indicating the successful face swap.
@@ -28,18 +28,24 @@ There were no significant changes from the initial proposal.
 
 ##### POST API Request
 
-curl -X POST -F "file1=@images/elon_musk.jpg" -F "file2=@images/mark.jpg" "http://localhost:8888/features/upload"
+curl -X POST -F "file1=@images/elon_musk.jpg" -F "file2=@images/mark.jpg" "http://localhost:8080/features/upload"
 
-Note: Replace http://localhost:8888 with the appropriate server address
+Note: Replace http://localhost:8080 with the appropriate server address
 
 ##### Expected Output:
 
 {
-  "image": "Base64_encoded_image",
-  "message": "Faces swapped successfully."
+  "message": "Faces swapped successfully.",
+  "image": "Base64_encoded_image"
 }
 
 This command uploads two image files (elon_musk.jpg and mark.jpg) and swaps the faces of the individuals. The response contains the merged image in base64 format along with a success message.
+And the merged image will be proveid through web browser, in this assignment, we just provide the base64 information.
+
+<p align="center">
+<img src="unimovie/api/faceswap/images/result.jpeg" width="700px" alt="Face Swap Result">
+</p>
+
 ### Movie Recommendation API
 
 This repository contains the code for a movie recommendation system that recommends movies based on seasons, genres, and rankings.
