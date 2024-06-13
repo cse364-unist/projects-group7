@@ -54,7 +54,7 @@ public class MovieController_predict {
 
         ProcessBuilder builder = new ProcessBuilder("python", scriptPath, "--factors", factor);
 
-        builder.directory(new File("/root/project/milestone2/api/movie_predict"));
+        builder.directory(new File("/root/project/projects-group7/unimovie/api/movie_predict"));
 
         builder.redirectErrorStream(true);
 
