@@ -1,15 +1,18 @@
 # CSE364-unist group 7 - User documentation
 
-This is the guide line for users who want to enjoy our App UniMovie
+This is guideline for user who want to enjoy our UniMovie service.
 
--**The name 'root' who commit in the milestone3 and milestone3_rec is 'JungwooMoon-20191352' because he commit by ubuntu**
-## Description
+-**The commit name 'root' is 'JungwooMoon-20191352' because he commit by ubuntu system** 
 
-The project implements a feature that enables users to merge the faces of two individuals in an image. It utilizes computer vision techniques to detect and swap the faces, resulting in a combined image.
 
-## Changes from Proposal
+## What is UniMovie App about
 
-There were no significant changes from the initial proposal.
+The app provides...
+* The seasonal movie recommendation system to solve users' concerns about choosing a movie due to the overflowing ott system
+
+* The face-swap system to satisfy their fun and desire to appear in a movie
+
+* The movie prediction system to inform users of information by predicting the success of a movie before releasing it or watching it in a movie theater
 
 ## REST APIs Implemented
 
