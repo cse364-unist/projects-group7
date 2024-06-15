@@ -3,238 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unimovie - Movie Success Predict</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            padding: 0.5rem;
-        }
-
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-
-        .form-group small {
-            display: block;
-            margin-top: 5px;
-            color: #666;
-        }
-
-        .form-group button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-        }
-
-        .form-group button:hover {
-            background-color: #45a049;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-
-            nav a {
-                text-align: left;
-                padding-left: 20px;
-            }
-
-            footer {
-                position: relative;
-            }
-        }
-    </style>
+    <title>UniMovie - Movie Success Predict</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Unimovie - Movie Success Predict</h1>
-    </header>
-    <nav>
-        <a href="#movie-recommendation">Movie Recommendation</a>
-        <a href="#face-swap">Face Swap with Movie Poster</a>
-        <a href="#movie-predict">Movie Success Predict</a>
-    </nav>
-    <div class="container">
-        <h2>Movie Success Predict</h2>
-        <form id="predict-form">
-            <div class="form-group">
-                <label for="director_name">Director Name</label>
-                <input type="text" id="director_name" name="director_name" placeholder="James Cameron">
-                <small>Example: James Cameron</small>
-            </div>
-            <div class="form-group">
-                <label for="duration">Duration</label>
-                <input type="text" id="duration" name="duration" placeholder="178">
-                <small>Example: 178</small>
-            </div>
-            <div class="form-group">
-                <label for="director_facebook_likes">Director Facebook Likes</label>
-                <input type="text" id="director_facebook_likes" name="director_facebook_likes" placeholder="0">
-                <small>Example: 0</small>
-            </div>
-            <div class="form-group">
-                <label for="actor_3_facebook_likes">Actor 3 Facebook Likes</label>
-                <input type="text" id="actor_3_facebook_likes" name="actor_3_facebook_likes" placeholder="855">
-                <small>Example: 855</small>
-            </div>
-            <div class="form-group">
-                <label for="actor_2_name">Actor 2 Name</label>
-                <input type="text" id="actor_2_name" name="actor_2_name" placeholder="Joel David Moore">
-                <small>Example: Joel David Moore</small>
-            </div>
-            <div class="form-group">
-                <label for="actor_1_facebook_likes">Actor 1 Facebook Likes</label>
-                <input type="text" id="actor_1_facebook_likes" name="actor_1_facebook_likes" placeholder="1000">
-                <small>Example: 1000</small>
-            </div>
-            <div class="form-group">
-                <label for="gross">Gross</label>
-                <input type="text" id="gross" name="gross" placeholder="760505847">
-                <small>Example: 760505847</small>
-            </div>
-            <div class="form-group">
-                <label for="genres">Genres</label>
-                <input type="text" id="genres" name="genres" placeholder="Action|Adventure|Fantasy|Sci-Fi">
-                <small>Example: Action|Adventure|Fantasy|Sci-Fi</small>
-            </div>
-            <div class="form-group">
-                <label for="actor_1_name">Actor 1 Name</label>
-                <input type="text" id="actor_1_name" name="actor_1_name" placeholder="CCH Pounder">
-                <small>Example: CCH Pounder</small>
-            </div>
-            <div class="form-group">
-                <label for="num_voted_users">Number of Voted Users</label>
-                <input type="text" id="num_voted_users" name="num_voted_users" placeholder="886204">
-                <small>Example: 886204</small>
-            </div>
-            <div class="form-group">
-                <label for="actor_3_name">Actor 3 Name</label>
-                <input type="text" id="actor_3_name" name="actor_3_name" placeholder="Wes Studi">
-                <small>Example: Wes Studi</small>
-            </div>
-            <div class="form-group">
-                <label for="facenumber_in_poster">Face Number in Poster</label>
-                <input type="text" id="facenumber_in_poster" name="facenumber_in_poster" placeholder="0">
-                <small>Example: 0</small>
-            </div>
-            <div class="form-group">
-                <label for="plot_keywords">Plot Keywords</label>
-                <input type="text" id="plot_keywords" name="plot_keywords" placeholder="avatar|future|marine|native|paraplegic">
-                <small>Example: avatar|future|marine|native|paraplegic</small>
-            </div>
-            <div class="form-group">
-                <label for="num_user_for_reviews">Number of User for Reviews</label>
-                <input type="text" id="num_user_for_reviews" name="num_user_for_reviews" placeholder="3054">
-                <small>Example: 3054</small>
-            </div>
-            <div class="form-group">
-                <label for="language">Language</label>
-                <input type="text" id="language" name="language" placeholder="English">
-                <small>Example: English</small>
-            </div>
-            <div class="form-group">
-                <label for="country">Country</label>
-                <input type="text" id="country" name="country" placeholder="USA">
-                <small>Example: USA</small>
-            </div>
-            <div class="form-group">
-                <label for="content_rating">Content Rating</label>
-                <input type="text" id="content_rating" name="content_rating" placeholder="PG-13">
-                <small>Example: PG-13</small>
-            </div>
-            <div class="form-group">
-                <label for="budget">Budget</label>
-                <input type="text" id="budget" name="budget" placeholder="237000000">
-                <small>Example: 237000000</small>
-            </div>
-            <div class="form-group">
-                <label for="title_year">Title Year</label>
-                <input type="text" id="title_year" name="title_year" placeholder="2009">
-                <small>Example: 2009</small>
-            </div>
-            <div class="form-group">
-                <label for="actor_2_facebook_likes">Actor 2 Facebook Likes</label>
-                <input type="text" id="actor_2_facebook_likes" name="actor_2_facebook_likes" placeholder="936">
-                <small>Example: 936</small>
-            </div>
-            <div class="form-group">
-                <label for="aspect_ratio">Aspect Ratio</label>
-                <input type="text" id="aspect_ratio" name="aspect_ratio" placeholder="1.78">
-                <small>Example: 1.78</small>
-            </div>
-            <div class="form-group">
-                <label for="movie_facebook_likes">Movie Facebook Likes</label>
-                <input type="text" id="movie_facebook_likes" name="movie_facebook_likes" placeholder="33000">
-                <small>Example: 33000</small>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Predict!">
-                <button>Predict</button>
-            </div>
-        </form>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">UniMovie</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recommendation.html">Movie Recommendations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="faceswap.html">Face Swap with Movie Poster</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="predict.html">Movie Success Predict</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <footer>
-        <p>Unimovie &copy; 2024</p>
-    </footer>
+</nav>
 
-    <script src="script.js"></script>
+<div class="container mt-4" id="content">
+    <h2>Movie Success Predict</h2>
+    <form id="predict-form">
+        <div class="mb-3">
+            <label for="director_name" class="form-label">Director Name</label>
+            <input type="text" class="form-control" id="director_name" name="director_name" placeholder="James Cameron">
+            <small class="form-text text-muted">Example: James Cameron</small>
+        </div>
+        <div class="mb-3">
+            <label for="duration" class="form-label">Duration</label>
+            <input type="text" class="form-control" id="duration" name="duration" placeholder="178">
+            <small class="form-text text-muted">Example: 178</small>
+        </div>
+        <div class="mb-3">
+            <label for="director_facebook_likes" class="form-label">Director Facebook Likes</label>
+            <input type="text" class="form-control" id="director_facebook_likes" name="director_facebook_likes" placeholder="0">
+            <small class="form-text text-muted">Example: 0</small>
+        </div>
+        <div class="mb-3">
+            <label for="actor_3_facebook_likes" class="form-label">Actor 3 Facebook Likes</label>
+            <input type="text" class="form-control" id="actor_3_facebook_likes" name="actor_3_facebook_likes" placeholder="855">
+            <small class="form-text text-muted">Example: 855</small>
+        </div>
+        <div class="mb-3">
+            <label for="actor_2_name" class="form-label">Actor 2 Name</label>
+            <input type="text" class="form-control" id="actor_2_name" name="actor_2_name" placeholder="Joel David Moore">
+            <small class="form-text text-muted">Example: Joel David Moore</small>
+        </div>
+        <div class="mb-3">
+            <label for="actor_1_facebook_likes" class="form-label">Actor 1 Facebook Likes</label>
+            <input type="text" class="form-control" id="actor_1_facebook_likes" name="actor_1_facebook_likes" placeholder="1000">
+            <small class="form-text text-muted">Example: 1000</small>
+        </div>
+        <div class="mb-3">
+            <label for="gross" class="form-label">Gross</label>
+            <input type="text" class="form-control" id="gross" name="gross" placeholder="760505847">
+            <small class="form-text text-muted">Example: 760505847</small>
+        </div>
+        <div class="mb-3">
+            <label for="genres" class="form-label">Genres</label>
+            <input type="text" class="form-control" id="genres" name="genres" placeholder="Action|Adventure|Fantasy|Sci-Fi">
+            <small class="form-text text-muted">Example: Action|Adventure|Fantasy|Sci-Fi</small>
+        </div>
+        <div class="mb-3">
+            <label for="actor_1_name" class="form-label">Actor 1 Name</label>
+            <input type="text" class="form-control" id="actor_1_name" name="actor_1_name" placeholder="CCH Pounder">
+            <small class="form-text text-muted">Example: CCH Pounder</small>
+        </div>
+        <div class="mb-3">
+            <label for="num_voted_users" class="form-label">Number of Voted Users</label>
+            <input type="text" class="form-control" id="num_voted_users" name="num_voted_users" placeholder="886204">
+            <small class="form-text text-muted">Example: 886204</small>
+        </div>
+        <div class="mb-3">
+            <label for="actor_3_name" class="form-label">Actor 3 Name</label>
+            <input type="text" class="form-control" id="actor_3_name" name="actor_3_name" placeholder="Wes Studi">
+            <small class="form-text text-muted">Example: Wes Studi</small>
+        </div>
+        <div class="mb-3">
+            <label for="facenumber_in_poster" class="form-label">Face Number in Poster</label>
+            <input type="text" class="form-control" id="facenumber_in_poster" name="facenumber_in_poster" placeholder="0">
+            <small class="form-text text-muted">Example: 0</small>
+        </div>
+        <div class="mb-3">
+            <label for="plot_keywords" class="form-label">Plot Keywords</label>
+            <input type="text" class="form-control" id="plot_keywords" name="plot_keywords" placeholder="avatar|future|marine|native|paraplegic">
+            <small class="form-text text-muted">Example: avatar|future|marine|native|paraplegic</small>
+        </div>
+        <div class="mb-3">
+            <label for="num_user_for_reviews" class="form-label">Number of User for Reviews</label>
+            <input type="text" class="form-control" id="num_user_for_reviews" name="num_user_for_reviews" placeholder="3054">
+            <small class="form-text text-muted">Example: 3054</small>
+        </div>
+        <div class="mb-3">
+            <label for="language" class="form-label">Language</label>
+            <input type="text" class="form-control" id="language" name="language" placeholder="English">
+            <small class="form-text text-muted">Example: English</small>
+        </div>
+        <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" id="country" name="country" placeholder="USA">
+            <small class="form-text text-muted">Example: USA</small>
+        </div>
+        <div class="mb-3">
+            <label for="content_rating" class="form-label">Content Rating</label>
+            <input type="text" class="form-control" id="content_rating" name="content_rating" placeholder="PG-13">
+            <small class="form-text text-muted">Example: PG-13</small>
+        </div>
+        <div class="mb-3">
+            <label for="budget" class="form-label">Budget</label>
+            <input type="text" class="form-control" id="budget" name="budget" placeholder="237000000">
+            <small class="form-text text-muted">Example: 237000000</small>
+        </div>
+        <div class="mb-3">
+            <label for="title_year" class="form-label">Title Year</label>
+            <input type="text" class="form-control" id="title_year" name="title_year" placeholder="2009">
+            <small class="form-text text-muted">Example: 2009</small>
+        </div>
+        <div class="mb-3">
+            <label for="actor_2_facebook_likes" class="form-label">Actor 2 Facebook Likes</label>
+            <input type="text" class="form-control" id="actor_2_facebook_likes" name="actor_2_facebook_likes" placeholder="936">
+            <small class="form-text text-muted">Example: 936</small>
+        </div>
+        <div class="mb-3">
+            <label for="aspect_ratio" class="form-label">Aspect Ratio</label>
+            <input type="text" class="form-control" id="aspect_ratio" name="aspect_ratio" placeholder="1.78">
+            <small class="form-text text-muted">Example: 1.78</small>
+        </div>
+        <div class="mb-3">
+            <label for="movie_facebook_likes" class="form-label">Movie Facebook Likes</label>
+            <input type="text" class="form-control" id="movie_facebook_likes" name="movie_facebook_likes" placeholder="33000">
+            <small class="form-text text-muted">Example: 33000</small>
+        </div>
+        <div class="mb-3">
+            <input type="submit" class="btn btn-primary" value="Predict!">
+        </div>
+    </form>
+</div>
+
+<footer class="bg-dark text-white text-center py-3 mt-4">
+    <p>Unimovie &copy; 2024</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="predict.js"></script>
 </body>
 </html>
