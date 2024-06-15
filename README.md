@@ -2,9 +2,9 @@
 
 This is guideline for user who want to enjoy our UniMovie service.
 
-## Before start
-
 -**The commit name 'root' is 'JungwooMoon-20191352' because he commit by ubuntu system** 
+
+## Before start
 
 ### For Part 3
 
