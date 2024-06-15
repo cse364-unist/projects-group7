@@ -1,135 +1,57 @@
-# CSE364-unist group 7
+# CSE364-unist group 7 - User documentation
 
-This repository contains the code for a feature that allows users to merge the faces of two individuals.
+This is guideline for user who want to enjoy our UniMovie service.
 
-## Description
-
-The project implements a feature that enables users to merge the faces of two individuals in an image. It utilizes computer vision techniques to detect and swap the faces, resulting in a combined image.
-
-## Changes from Proposal
-
-There were no significant changes from the initial proposal.
-
-## REST APIs Implemented
-
-### Merge Faces API
-
-- **Description:** This API merges the face in movie poster with the user face
-- **HTTP Method:** POST
-- **Endpoint:** `/features/upload`
-- **Request Parameters:**
-  - `file1`: The image file(movie poster)
-  - `file2`: The image file(user face image)
-- **Response:** 
-  - `image`: Base64 encoded string of the resulting image.
-  - `message`: A confirmation message indicating the successful face swap.
-
-#### Example Curl Commands
-
-##### POST API Request
-
-curl -X POST -F "file1=@images/elon_musk.jpg" -F "file2=@images/mark.jpg" "http://localhost:8080/features/upload"
-
-Note: Replace http://localhost:8080 with the appropriate server address
-
-##### Expected Output:
-
-{
-  "message": "Faces swapped successfully.",
-  "image": "Base64_encoded_image"
-}
-
-This command uploads two image files (elon_musk.jpg and mark.jpg) and swaps the faces of the individuals. The response contains the merged image in base64 format along with a success message.
-And the merged image will be proveid through web browser, in this assignment, we just provide the base64 information.
-
-<p align="center">
-<img src="unimovie/api/faceswap/images/result.jpeg" width="700px" alt="Face Swap Result">
-</p>
-
-### Movie Recommendation API
-
-This repository contains the code for a movie recommendation system that recommends movies based on seasons, genres, and rankings.
-
-#### Description
-
-The system implements various features for recommending movies to users. It provides recommendations based on seasons, genres, and top rankings. Additionally, it offers random movie recommendations.
-
-#### Changes from Proposal
-
-We made changes to the implementation algorithm for the seasonal recommendation feature. Originally, we planned to recommend movies for each season based on the time people reviewed them. However, due to the lack of consistent data on review times, we decided to recommend movies for each season based on the release time of the movie.
-
-#### REST APIs Implemented
-
-##### Get Top10 Recommendation List of Season with Genre
-
-- **Description:** Retrieves the top 10 recommendation list of movies for a specific season and genre.
-- **HTTP Method:** GET
-- **Endpoint:** `/movies/recommend/top10`
-- **Query Parameters:**
-  - `season`: The season for which recommendations are requested.
-  - `genre`: The genre of movies to consider.
-- **Response:** List of top 10 recommended movie objects.
-
-##### Get Top 10 Recommendation List of Season
-
-- **Description:** Retrieves the top 10 recommendation list of movies for a specific season.
-- **HTTP Method:** GET
-- **Endpoint:** `/movies/recommend/top10`
-- **Query Parameters:**
-  - `season`: The season for which recommendations are requested.
-- **Response:** List of top 10 recommended movie objects.
+-**The commit name 'root' is 'JungwooMoon-20191352' because he commit by ubuntu system** 
 
 
-#### Example Curl Commands
+## What is UniMovie App about
 
-##### Get All Movie List
+The app provides...
+* The seasonal movie recommendation system to solve users' concerns about choosing a movie due to the overflowing ott system
 
+* The face-swap system to satisfy their fun and desire to appear in a movie
 
-###### 1.Get Top 10 Recommendation List of Season with Genre
-curl -X GET "http://localhost:8080/movies/recommend/top10?season=summer&genre=Comedy"
-###### Expected Output:
-[
-  {
-    "title": "Recommended Movie 1",
-    "genre": "Comedy",
-    ...
-  },
-  ...
-]
-###### 2.Get Top 10 Recommendation List of Season
-curl -X GET "http://localhost:8080/movies/recommend/top10?season=summer"
-###### Expected Output:
-[
-  {
-    "title": "Random Movie 1",
-    "genre": "Drama",
-    ...
-  },
-  ...
-]
+* The movie prediction system to inform users of information by predicting the success of a movie before releasing it or watching it in a movie theater
 
-### Movie Prediction API
+## How it works and How to use by Each page and what each page does
 
-This API provides movie prediction functionality based on input movie factors.
+### Main page
 
-#### Features
+![Main page](images/Homepage.PNG)
 
-##### Movie Prediction
+This is main page of our UniMovie App. And we can interact with our feature using bars abvoe of the page. 
+This page is just Homepage. Therefore, the aim is to give users a choice of three features.
 
-- **Description**: Predicts the success level of a movie based on provided factors.
-- **REST API**:
-  - Endpoint: `/features/movie_predict`
-  - Method: POST
-  - Request Body: 
-    - `factor`: A comma-separated string containing movie factors
-  - Response: Returns one of the following strings: `'FLOP'`, `'AVG'`, `'HIT'` indicating the predicted success level of the movie.
+Here is our menu bar. And all page have menu bar.
 
-#### Example Usage
+![Bar](images/Menubar.PNG)
 
-##### Movie Prediction API Example
+* If user click Home button user will come back to the main page, wnhereever user locate other feature.
+* If user click Movie Recommendations button, user will go to our movie recommendation feature page.
+* If user click Face Swap with Movie Poster, user will go to our Face Swap feature page.
+* If user click Movie Success Predict, user will go to our Movie Prediction feature page.
 
-###### Example:
-curl -X POST -F "factor=James Cameron,178,0,855,Joel David Moore,1000,760505847,Action|Adventure|Fantasy|Sci-Fi,CCH Pounder,886204,Wes Studi,0,avatar|future|marine|native|paraplegic,3054,English,USA,PG-13,237000000,2009,936,1.78,33000" "http://localhost:8080/features/movie_predict"
+### Movie Recommendation Page
 
-###### Expected Output:
-['HIT']
+![Movie Recommendation Page](images/Rec_0.PNG)
+
+This is the page of our Movie Recommendation feature. user can interact with bars above the page to interact with other feautre.
+And also user can use our UI to get the movie recommendation by season and genre.
+
+User can choose 4 season which are 'summer', 'winter', 'spring', 'fall'. And user can optionally choose genre which have 18 category.
+
+User have to click 'Get Top 10 Recommendation' Button first, because we want to show users to the recommended movies that we are most confident in. So, when user click the 'Get Top 10 Recommendation' Button, user can press 'Get Random Recommendation' Button.
+So, every time user change the genre and season, user must click the 'Get Top 10 Recommendation' Button first.
+
+![Output Result](images/Rec_2.PNG)
+
+This is the output that we provide for users. Output contains the data which are 'movie_name', 'season', 'genre', 'rating'. 
+If user don't like the result user can change the input of season and genre or user can press 'Get Random Recommendation' Button.
+
+![Error Situation](images/Rec_3.PNG)
+
+If user want to recommend movie, user have to choose season. 
+If user didn't choose season and press the 'Recommendaiton Button'. User can see the 'Error message'. 
+But genre is optional, so user can recommend movie only provide season without genre.
+
