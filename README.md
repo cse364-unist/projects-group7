@@ -13,7 +13,9 @@ The app provides...
 
 * The movie prediction system to inform users of information by predicting the success of a movie before releasing it or watching it in a movie theater
 
-## Changes from Proposal
+So, if you like movie, you will enjoy our App.
+
+## Main Page
 
 There were no significant changes from the initial proposal.
 
