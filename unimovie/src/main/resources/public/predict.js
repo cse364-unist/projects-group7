@@ -3,13 +3,12 @@ document.getElementById('predict-form').addEventListener('submit', async functio
 
     const formData = new FormData(this);
     let postData = '';
-    
 
     formData.forEach((value, key) => {
         postData += encodeURIComponent(key) + '=' + encodeURIComponent(value) + '&';
     });
 
-    postData = postData.slice(0, -1);
+    postData = postData.slice(0, -1); // Remove the trailing '&'
     const apiUrl = 'http://localhost:8080/features/movie_predict';
 
     try {
