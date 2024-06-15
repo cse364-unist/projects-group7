@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UniMovie</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+            crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,900;1,900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .upload-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .upload-section {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .center-button, .save-button {
+            display: flex;
+            justify-content: center;
+        }
+        #userInput {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            margin: 5% auto 0;
+            border: 1px solid green;
+        }
+        .inner-container {
+            width: 100%;
+        }
+        #loading {
+            display: none;
+            text-align: center;
+        }
+        #save-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">UniMovie</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="recommendation.html">Movie Recommendations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="faceswap.html">Face Swap with Movie Poster</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="predict.html">Movie Success Predict</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div id="userInput" class="card container">
+    <div id="inner-container" class="inner-container">
+        <h3 style="text-align:center; font-weight:bold" class="description-text">
+            This generates a new movie poster with your face!
+        </h3>
+        <br>
+        <h6 style="text-align:left">
+            Please upload your face image and target poster image.<br>
+            <u>(It takes about 2 minutes to generate image)</u>
+            <br><br>
+            Your face image will not be saved inside our server.
+        </h6>
+        <form id="upload-form">
+            <div class="upload-container">
+                <div class="upload-section">
+                    <label for="faceImage" class="description-text col-form-label" style="font-weight:bold">Face Image Upload</label>
+                    <input type="file" class="form-control" id="faceImage" accept="image/jpeg, image/png, image/jpg">
+                </div>
+                <div class="upload-section">
+                    <label for="posterImage" class="description-text col-form-label" style="font-weight:bold">Poster Image Upload</label>
+                    <input type="file" class="form-control" id="posterImage" accept="image/jpeg, image/png, image/jpg">
+                </div>
+            </div>
+            <div class="center-button">
+                <button type="button" id="convert-btn" class="btn btn-primary mb-3">Convert</button>
+            </div>
+        </form>
+        <div id="loading">
+            <img src="loading.gif" alt="Loading...">
+        </div>
+        <div id="result-container" style="text-align:center; margin-top:20px;">
+            <!-- Result will be displayed here -->
+        </div>
+        <div class="save-button">
+            <button type="button" id="save-btn" class="btn btn-primary mb-3">Save Image</button>
+        </div>
+    </div>  
+</div>
+<script src="faceswap.js"></script>
+</body>
+</html>
