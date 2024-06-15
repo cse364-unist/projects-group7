@@ -2,11 +2,16 @@
 
 This is guideline for user who want to enjoy our UniMovie service.
 
-(the commit name root is JungwooMoon-20191352 because he commit by ubuntu system) 
+**The commit name 'root' is 'JungwooMoon-20191352' because he commit by ubuntu system** 
 
-## Description
+## What is UniMovie App about
 
-The project implements a feature that enables users to merge the faces of two individuals in an image. It utilizes computer vision techniques to detect and swap the faces, resulting in a combined image.
+The app provides...
+* The seasonal movie recommendation system to solve users' concerns about choosing a movie due to the overflowing ott system
+
+* The face-swap system to satisfy their fun and desire to appear in a movie
+
+* The movie prediction system to inform users of information by predicting the success of a movie before releasing it or watching it in a movie theater
 
 ## Changes from Proposal
 
