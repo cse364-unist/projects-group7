@@ -2,7 +2,7 @@
 
 This is guideline for user who want to enjoy our UniMovie service.
 
-**The commit name 'root' is 'JungwooMoon-20191352' because he commit by ubuntu system** 
+-**The commit name 'root' is 'JungwooMoon-20191352' because he commit by ubuntu system** 
 
 ## What is UniMovie App about
 
