@@ -36,7 +36,7 @@ The app provides...
 
 ## How it works and How to use by Each page and what each page does
 
-### Main page
+### 1. Main page
 
 ![Main page](images/Homepage.PNG)
 
@@ -52,7 +52,7 @@ Here is our menu bar. And all page have menu bar.
 * If user click Face Swap with Movie Poster, user will go to our Face Swap feature page.
 * If user click Movie Success Predict, user will go to our Movie Prediction feature page.
 
-### Movie Recommendation Page
+### 2. Movie Recommendation Page
 
 ![Movie Recommendation Page](images/Rec_0.PNG)
 
@@ -74,4 +74,7 @@ If user don't like the result user can change the input of season and genre or u
 If user want to recommend movie, user have to choose season. 
 If user didn't choose season and press the 'Recommendaiton Button'. User can see the 'Error message'. 
 But genre is optional, so user can recommend movie only provide season without genre.
+
+### 3. Face swap page
+
 
