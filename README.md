@@ -1,6 +1,8 @@
-# CSE364-unist group 7
+# CSE364-unist group 7 - User documentaion
 
-This repository contains the code for a feature that allows users to merge the faces of two individuals.
+This is guideline for user who want to enjoy our UniMovie service.
+
+* (the commit name root is JungwooMoon-20191352 because he commit by ubuntu system) 
 
 ## Description
 
