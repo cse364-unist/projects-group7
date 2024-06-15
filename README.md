@@ -10,16 +10,18 @@ This is guideline for user who want to enjoy our UniMovie service.
 
 According to Piazza's answer we do not need to implent '.yml' file. But we have to provide evidence of 'Continuous Integration'.
 
-For first generation we didn't implement 'Face-swap' and 'Movie Predict' feature. So, in first commit you click the 'Face-swap' and 'Movie Predict' you can't get any page.
+This is our progress...
+
+* For first generation we didn't implement 'Face-swap' and 'Movie Predict' feature. So, in first commit you click the 'Face-swap' and 'Movie Predict' you can't get any page.
 But you can access 'Movie Recommendaiton'.
 
-And second commit, we add 'Face-swap' feature, so when we test the code in local, we can see the 'Face-swap' page and feature is adding.
+* Second commit, we add 'Face-swap' feature, so when we test the code in local, we can see the 'Face-swap' page and feature is adding.
 
-And third commit, we add 'Movie Predict' feature, so when we test the code in local, we can see the 'Movie Predict' page and feature is adding.
+* Third commit, we add 'Movie Predict' feature, so when we test the code in local, we can see the 'Movie Predict' page and feature is adding.
 
-And For case of Read.md commit we add each part' feature description.
+* For case of Read.md commit we add each part' feature description.
 
-Lastly, the case of 'Deploy Application', we can use our app not in localhost.
+* The case of 'Deploy Application', we can use our app not in localhost.
 
 
 
