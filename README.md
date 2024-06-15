@@ -27,10 +27,32 @@ Here is our menu bar. And all page have menu bar.
 
 ![Bar](images/Menubar.PNG)
 
-* If you click Home button you will come back to the main page, wnhereever you locate other feature.
-* If you click Movie Recommendations button, you will go to our movie recommendation feature page.
-* If you click Face Swap with Movie Poster, you will go to our Face Swap feature page.
-* If you click Movie Success Predict, you will go to our Movie Prediction feature page.
+* If user click Home button user will come back to the main page, wnhereever user locate other feature.
+* If user click Movie Recommendations button, user will go to our movie recommendation feature page.
+* If user click Face Swap with Movie Poster, user will go to our Face Swap feature page.
+* If user click Movie Success Predict, user will go to our Movie Prediction feature page.
 
-### Movie Recommendation API
+### Movie Recommendation Page
+
+![Movie Recommendation Page](images/Rec_0.PNG)
+
+This is the page of our Movie Recommendation feature. user can interact with bars above the page to interact with other feautre.
+And also user can use our UI to get the movie recommendation by season and genre.
+
+User can choose 4 season which are 'summer', 'winter', 'spring', 'fall'. And user can optionally choose genre which have 18 category.
+
+User have to click 'Get Top 10 Recommendation' Button first, because we want to show users to the recommended movies that we are most confident in. So, when user click the 'Get Top 10 Recommendation' Button, user can press 'Get Random Recommendation' Button.
+So, every time user change the genre and season, user must click the 'Get Top 10 Recommendation' Button first.
+
+![Output Result](images/Rec_2.PNG)
+
+This is the output that we provide for users. Output contains the data which are 'movie_name', 'season', 'genre', 'rating'. 
+If user don't like the result user can change the input of season and genre or user can press 'Get Random Recommendation' Button.
+
+![Error Situation](images/Rec_3.PNG)
+
+If user want to recommend movie, user have to choose season. 
+If user didn't choose season and press the 'Recommendaiton Button'. User can see the 'Error message'. 
+But genre is optional, so user can recommend movie only provide season without genre.
+
 
