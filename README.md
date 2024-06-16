@@ -77,4 +77,27 @@ But genre is optional, so user can recommend movie only provide season without g
 
 ### 3. Face swap page
 
+### 4. Movie Success Prediction Page
+
+![Movie Success Prediction Page](images/Predict_0.PNG)
+
+This is the page for our Movie Success Prediction feature. Users can fill out a form to predict the success of a movie based on various factors.
+
+
+
+1. Fill in the form with the required details such as director name, duration, genres, budget, etc.
+2. Click the 'Predict!' button to submit the form.
+
+![Movie Success Prediction Page Submit Button](images/Predict_1.PNG)
+
+![Prediction Result HIT](images/Predict_2.PNG)
+
+![Prediction Result AVG](images/Predict_3.PNG)
+
+![Prediction Result FLOP](images/Predict_4.PNG)
+
+The result will indicate whether the movie is predicted to be a 'HIT', 'AVG', or 'FLOP'. 
+Based on the prediction, users can make informed decisions about watching or investing in a movie.
+
+
 
