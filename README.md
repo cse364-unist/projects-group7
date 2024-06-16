@@ -76,6 +76,20 @@ If user didn't choose season and press the 'Recommendaiton Button'. User can see
 But genre is optional, so user can recommend movie only provide season without genre.
 
 ### 3. Face swap page
+##What it does?
+This feature generates new movie poster with replacing the character's face with the user's face.
+![Faceswap page](images/faceswap_page.png)
+
+##How it works?
+You should upload both your face iamge and movie poster(please upload the images that clearly shows the face to generate nice quality of poster)
+Then, click the 'convert' button. (It will take about 2 minutes, if you are the first user for our website, it would take 6 minutes :( )
+![Faceswap loading pagee](images/faceswap_page_loading.png)
+
+##How to save?
+After the loading, our page shows the converted image and provided 'save' button. User can simply click the 'save' button to download the converted poster image.
+![Faceswap result pagee](images/faceswap_page_save.png)
+
+
 
 ### 4. Movie Success Prediction Page
 
