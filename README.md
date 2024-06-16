@@ -4,7 +4,7 @@ This is guideline for user who want to enjoy our UniMovie service.
 
 -**The commit name 'root' is 'JungwooMoon-20191352' because he commit by ubuntu system** 
 
--**We fail to implment part 2 and we annotate an instruction for part2 in docker** 
+-**We fail to implment part 2 and we annotate an instruction for part2 in docker and changed form of pox.xml in [text file](pom_for_part2)** 
 
 **[Please check localhost:8080](http://localhost:8080/) to check the Part 1 after you excute ./run.sh**
 
